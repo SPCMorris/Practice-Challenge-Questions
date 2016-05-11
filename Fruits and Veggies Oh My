@@ -15,8 +15,8 @@ Beans: $2
 Fruits: Apple, Cantaloupe and Beans
 Vegetables: Asparagus, Cabbage, Bok Choy
 
-The below var prices is what the program logs. There are only one of each, fruit and vegetable, that share the same first letter.
-Please put the fruits with fruits the vegetables with vegetables and fix all pricing!*/
+The below var prices is what the program logs. There is only one of each, fruit and vegetable, that share the same first letter.
+Please put the fruits with fruits, the vegetables with vegetables and fix all pricing!*/
 
 //Fix me!
 var prices = {
