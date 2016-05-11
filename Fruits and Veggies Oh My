@@ -1,0 +1,33 @@
+/*The program that manages the stores prices has a bug and mixed up all the fruit prices with the vegetable prices. 
+The prices were swapped by fruits that share the first letter with a vegetable.
+
+For example, {Apple: $12}, {Asparagus: $6}
+
+Here is what the prices should be: 
+
+Apple: $6
+Asparagus: $12
+Cabbage: $1
+Cantaloupe: $5
+Bok Choy: $5
+Beans: $2
+
+Fruits: Apple, Cantaloupe and Beans
+Vegetables: Asparagus, Cabbage, Bok Choy
+
+The below var prices is what the program logs. There are only one of each, fruit and vegetable, that share the same first letter.
+Please put the fruits with fruits the vegetables with vegetables and fix all pricing!*/
+
+//Fix me!
+var prices = {
+  Fruits: {
+    Beans: $5,
+    Apple: $12,
+    Cabbage: $5
+  },
+  Vegetables: {
+    Asparagus: $6,
+    Cantaloupe: $1,
+    BokChoy: $2
+  }
+};
