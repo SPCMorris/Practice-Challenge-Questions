@@ -1,0 +1,44 @@
+/*practice using higher order functions. Solve the bottom problems using at least one of these each: forEach, map, filter.*/
+
+//create a function that takes the numbers array and returns an evens array with only even numbers
+
+var numbers = [1,2,3,4,5,6,7,8,9,10];
+
+function evenNums(arr) {
+var evens;
+  evens=arr.filter(function(item){  
+    return item % 2 === 0;
+  });
+  return evens;
+}
+
+console.log(evenNums(numbers));
+
+//double each item in the evens array
+
+function double(arr) {
+  return arr.map(function(item){
+    return item * 2;
+  });
+}
+
+console.log(double(evenNums(numbers)));
+
+/*add the doubled evens array back into the numbers array, however, the new even numbers will replace the existing ones. So, 2 
+will be replaced by 4*/
+
+
+function newArr(arr, callback1, callback2) {
+var temp = callback1(callback2(arr)), count = 0,replacedArr = [];
+  
+  arr.forEach(function(item){
+    if(item % 2 === 0) {
+      replacedArr.push(temp[count]);
+      count++;
+    } else {
+      replacedArr.push(item);
+    }
+  });
+  return replacedArr;
+}
+console.log(newArr(numbers, double, evenNums));
