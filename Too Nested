@@ -1,0 +1,23 @@
+/*Create a function that can flatten a multidemensional array regardless of how many arrays are nested in it*/
+
+
+//My solution
+
+var nested =[[1], 2, [1,2,[3,[4,[5]]]]];
+
+function flattenAll(arr) {
+ var storage = [];
+  
+  function flatten(arr) {
+    arr.forEach(function(item){
+      if(Array.isArray(item)) {
+        flatten(item);
+      } else {
+      storage.push(item);
+      }
+    });
+  }
+  flatten(arr);
+  return storage;
+}
+
