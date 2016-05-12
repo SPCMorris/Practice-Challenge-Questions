@@ -1,0 +1,76 @@
+/*count the words in the below object. Also, return a string that contains all the strings of the previous object in order*/
+
+var countMe = {
+  1: "Hi! ",
+  2: 5,
+  3: ["Are you", [1, " having fun yet?"], undefined],
+  4: {1: " Gotta practice", 2: 10},
+  5: {1: [1," with",[3,[" multidimensional", [" arrays!"]]]]}
+};
+
+function countStr(arg){
+var temp, temp2, storageObj = [], tempStor = [], storageAns = [], count, answerStr, answerObj = {};
+  
+  for(var i in arg) {
+    storageObj.push(arg[i]);
+  }
+  
+  temp = flattenAll(storageObj);
+  
+  temp.forEach(function(item) {
+    if(typeof item === 'string') {
+      storageAns.push(item);
+    } 
+  });
+  
+  for(var el in temp) {
+    if(typeof temp[el] ==='object') {
+      tempStor.push(temp[el]);
+    }
+  }
+  
+   for(var j = 0; j < tempStor.length; j++) {
+     storageAns.push(extract(tempStor[j]));
+   }
+  
+   temp2 = flattenAll(storageAns);
+  
+   answerStr = temp2.filter(function(item){
+     return typeof item === 'string';
+   });
+  
+//subroutines below
+  function extract(obj) {
+    var storage = [];
+  
+      for(var i in obj) {
+        storage.push(obj[i]);
+      }
+  
+    return storage;
+  }
+
+
+  function flattenAll(arr) {
+    var storage = [];
+    
+    function flatten(arr) {
+      arr.forEach(function(item){
+        if(Array.isArray(item)){
+          flatten(item);
+        } else {
+          storage.push(item);
+        }
+      });
+    }
+    flatten(arr);
+    return storage;
+  }
+  
+//Finally an answer!!!
+   answerObj["Number of strings"] = count = answerStr.join("").split(" ").length;
+  answerObj["Combined Strings"] = answerStr.join("");
+  return answerObj;
+}
+
+console.log(countStr(countMe));
