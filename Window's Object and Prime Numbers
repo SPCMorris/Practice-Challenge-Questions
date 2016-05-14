@@ -31,13 +31,14 @@ var storage = [], primeStor = [],total = 0;
   }
   
   storage.forEach(function(array){   
-    array.forEach(function(item){   //extracts primes
-       if(item % 3 === item || item % 2 !== 0) {
-        if((item !== 0) && (item !== 1)) {
-        primeStor.push(item);
-        }
+    array.forEach(function(x){   //extracts primes
+       if((x === 2 || x === 3 || x === 5)) {
+        primeStor.push(x);
+      } else if(x % 2 !== 0 && x % 3 !== 0 && x !== 1) {
+        primeStor.push(x);
       }
     });    //totals the product of each array in storage
+    console.log(primeStor);
     total+= primeStor.reduce(function(a,b){
       return a*b;
     });  //resets the array containing the prime numbers for the next nested array
