@@ -2,7 +2,11 @@
 only type of arrays you will add to your code are like the below arrays and write your function in such a way as to be able to handle 
 any number of "numbers" array dynamically.
 
-For example: var numbers = [1,2,3,4,5,6,7,8] = (2*3*5*7) = 210
+For example: 
+
+var numbers1 = [1,2,3,4,5,6,7,8] = 210, var numbers2 = [23,31,47,101,13] = 43999943 
+total = 210 + 43999943
+Finally, return total.
 
 You must use higher order functions.*/
 
