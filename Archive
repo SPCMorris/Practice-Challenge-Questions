@@ -90,10 +90,12 @@ What is the largest prime factor of the number 600851475143 ?*/
 function prime(num) {
 var primeStor = [], primeOfNum = [], counter = 0, largestPrime = 0;
   
-  for(var i = 0; i <= num; i ++) {                                //extracts all prime numbers
-    if((i % 2 && i % 3 && i % 5 !== 0) && i !== 1) {
-      primeStor.push(i);
-    } 
+   for(var i = 0; i <= num; i ++) {                              
+     if((i === 2 || i === 3 || i === 5)) {
+        primeStor.push(i);
+      } else if(i % 2 !== 0 && i % 3 !== 0 && i !== 1) {
+        primeStor.push(i);
+      }
   }
   
   for(var x in primeStor) {                                     //extracts all prime factors except for 2,3,5
