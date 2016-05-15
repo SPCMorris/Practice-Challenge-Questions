@@ -1,8 +1,10 @@
-/*Create a function that takes in an obj or an array (but not both at the same time) and returns one of the below strings depending on what type of argument is passed: 
+/*Create a function that takes in an obj or an array (but not both at the same time) and logs one of the below strings depending on 
+what type of argument is passed: 
 
 "The obj has [number of properties] and they are [property names] and have the values [values of properties] respectively"
 
 "The array contains [number of items] and they are [items] in order of position" */
+
 var Aileen = {
   Name: "Aileen",
   age: 'old'
