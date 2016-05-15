@@ -1,0 +1,51 @@
+/*Create a function that takes in an obj or an array (but not both at the same time) and returns one of the below strings depending on what type of argument is passed: 
+
+"The obj has [number of properties] and they are [property names] and have the values [values of properties] respectively"
+
+"The array contains [number of items] and they are [items] in order of position" */
+var Aileen = {
+  Name: "Aileen",
+  age: 'old'
+};
+
+var me = ["Ryan", 29];
+
+function whatsInIt(arg) {
+var count = 0, propNames = "", values = "";
+  
+  if(Array.isArray(arg)) {
+    for(var j = 0; j < arg.length; j++) {
+      count++;
+      values+= arg[j] + ", ";
+    }
+    console.log("The array contains " + count + " item(s) and they are " + values + "in order of position");
+  } else if(typeof arg === 'object') {
+    for(var i in arg) {
+      count++;
+      propNames+= i + ", ";
+      values+= arg[i] + ", ";
+    }
+    console.log("The obj has " + count + " properties and they are " + propNames + "and have the values " + values + "respectively");
+    }
+}
+
+whatsInIt(Aileen);
+whatsInIt(me);
+
+/*Create a function that takes in both an obj and an array and swaps their values. Assume that the first key/value pair in the obj are in the 0 position.*/
+
+function swap(arr, obj) {
+var temp  = [], count = 0;
+  
+  for(var i in obj) {
+    temp.push(obj[i]);
+    obj[i] = arr[count];
+    arr[count] = temp[count];
+    count++;
+  }
+}
+
+swap(me, Aileen);
+
+console.log(me);
+console.log(Aileen);
