@@ -7,7 +7,7 @@ what type of argument is passed:
 
 var Aileen = {
   Name: "Aileen",
-  age: 'old'
+  age: 36
 };
 
 var me = ["Ryan", 29];
