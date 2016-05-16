@@ -1,0 +1,37 @@
+//Project Euler Problem
+/*A palindromic number reads the same both ways. The largest palindrome 
+made from the product of two 2-digit numbers is 9009 = 91 × 99.
+
+Find the largest palindrome made from the product of two 3-digit numbers.*/
+
+
+function palindrom() {
+var a = 999, b = 999, temp, product = 0, productArr = [], palinArr = [];
+
+//2 for loop to work backwards
+//assign product through each loop
+//push the product into the product arr
+
+  //I set the limit to 100 instead of 999 because it was too many numbers to check
+	for(var x = 0; x < 100; x++){
+		for(var y = 0; y < 100; y++) {
+			productArr.push((a-x) * (b-y));
+		}
+	}
+
+//finds all palindromic numbers in the product array by comparing strings
+	for(var z = 0; z < productArr.length; z++) {
+      temp = productArr[z].toString().split("").reverse().join("");
+        if(temp === productArr[z].toString()) {
+          palinArr.push(productArr[z]);
+        }
+	}
+//finds the largest palindromic number	
+	return palinArr.reduce(function(a,b){
+		if(a > b) {
+			return a;
+		} else {
+			return b;
+		}
+	});
+}
