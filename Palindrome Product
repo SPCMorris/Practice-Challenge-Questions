@@ -9,7 +9,6 @@ function palindrom() {
 var a = 999, b = 999, temp, product = 0, productArr = [], palinArr = [];
 
 //2 for loop to work backwards
-//assign product through each loop
 //push the product into the product arr
 
   //I set the limit to 100 instead of 999 because it was too many numbers to check
