@@ -1,0 +1,22 @@
+//Find all the prime factors of every number from 1 to whatever number you pass to a function as the argument
+
+function small(n) {
+var primeStor = [], x = 1;
+ 
+  while(x < n) {
+    primeStor.push(prime(x));
+    x++;
+  }
+     function prime(num) {
+     var primeStor2 = [], i = 2;
+ 
+        for(i; i <= num; i++) {
+            while(num % i === 0) {
+                primeStor2.push(i);
+                num /= i;
+            }
+        }
+      return primeStor2;
+    }
+ return primeStor;
+}
